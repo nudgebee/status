@@ -48,6 +48,8 @@ status-website:
   # cname: status.dev.nudgebee.com
   baseUrl: /status
   logoUrl: https://dev.nudgebee.pollux.in/logo192.png
+  # Browser-tab icon; hosted in this repo so it does not depend on the monitored host.
+  favicon: https://raw.githubusercontent.com/nudgebee/status/master/assets/nudgebee-icon.png
   name: Nudgebee Status
   introTitle: "**Nudgebee** service status"
   introMessage: "Live uptime and response times for the Nudgebee dev environment (app, docs, and agent gateways). Incidents are tracked as issues in the [status repository](https://github.com/nudgebee/status/issues?q=label%3Astatus)."
