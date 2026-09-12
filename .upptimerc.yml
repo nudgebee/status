@@ -42,11 +42,9 @@ sites:
 status-website:
   # Repo is private: Upptime writes a bare "404" page unless publish is true
   publish: true
-  # Custom domain: once the Cloudflare CNAME status.dev.nudgebee.com -> nudgebee.github.io
-  # exists, uncomment `cname` and delete `baseUrl`. Doing it before DNS resolves makes
-  # GitHub Pages redirect nudgebee.github.io/status to a dead host.
-  # cname: status.dev.nudgebee.com
-  baseUrl: /status
+  # Custom domain: Cloudflare CNAME status.dev.nudgebee.pollux.in -> nudgebee.github.io (DNS only).
+  # nudgebee.github.io/status now redirects here.
+  cname: status.dev.nudgebee.pollux.in
   logoUrl: https://dev.nudgebee.pollux.in/logo192.png
   # Browser-tab icon; hosted in this repo so it does not depend on the monitored host.
   favicon: https://raw.githubusercontent.com/nudgebee/status/master/assets/nudgebee-icon.png
