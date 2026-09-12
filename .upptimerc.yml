@@ -11,6 +11,24 @@ sites:
     maxResponseTime: 10000
   - name: Docs
     url: https://docs.dev.nudgebee.pollux.in
+  # Product areas, one row each: /api/public/status?component=... answers 200 only
+  # when every listed component is healthy (503 otherwise, 404 for a bad id).
+  - name: App · Automation
+    url: https://dev.nudgebee.pollux.in/api/public/status?component=automation
+    maxResponseTime: 10000
+  - name: App · Nubi
+    url: https://dev.nudgebee.pollux.in/api/public/status?component=ai
+    maxResponseTime: 10000
+  - name: App · Troubleshooting
+    url: https://dev.nudgebee.pollux.in/api/public/status?component=api,ingest
+    maxResponseTime: 10000
+  - name: App · Account onboarding
+    url: https://dev.nudgebee.pollux.in/api/public/status?component=api,notifications
+    maxResponseTime: 10000
+  - name: App · Optimisation
+    # Only the API server for now; cost/ML services have no health URL reachable from the app pod.
+    url: https://dev.nudgebee.pollux.in/api/public/status?component=api
+    maxResponseTime: 10000
   - name: Relay Gateway
     url: https://relay.dev.nudgebee.pollux.in/status
     maxResponseTime: 10000
