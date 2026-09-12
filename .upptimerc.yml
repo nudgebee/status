@@ -22,6 +22,8 @@ sites:
     maxResponseTime: 10000
 
 status-website:
+  # Repo is private: Upptime writes a bare "404" page unless publish is true
+  publish: true
   # No custom domain yet; page is served at https://nudgebee.github.io/status
   # To use status.nudgebee.com: add `cname: status.nudgebee.com`, remove baseUrl, and point a CNAME at nudgebee.github.io
   baseUrl: /status
