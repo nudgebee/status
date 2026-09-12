@@ -3,41 +3,43 @@ repo: status
 user-agent: nudgebee-status
 
 sites:
-  - name: Website
-    url: https://nudgebee.com
-    icon: https://nudgebee.com/favicon.ico
+  # Dev environment (GKE nudgebee-dev, namespace nudgebee) for now; switch hosts to
+  # app./docs./relay./collector. nudgebee.com when this page is meant to cover prod.
   - name: App
-    url: https://app.nudgebee.com/status
-    icon: https://app.nudgebee.com/favicon.ico
+    url: https://dev.nudgebee.pollux.in/status
+    icon: https://dev.nudgebee.pollux.in/favicon.ico
     maxResponseTime: 10000
   - name: Docs
-    url: https://docs.nudgebee.com
+    url: https://docs.dev.nudgebee.pollux.in
   - name: Relay Gateway
-    url: https://relay.nudgebee.com/status
+    url: https://relay.dev.nudgebee.pollux.in/status
     maxResponseTime: 10000
   - name: Collector Gateway
-    # No public health route yet: the app answers 404 at every path, which still proves the ingress and pod are up.
-    url: https://collector.nudgebee.com/
-    expectedStatusCodes: [200, 404]
+    url: https://collector.dev.nudgebee.pollux.in/health
+    maxResponseTime: 10000
+  - name: LLM Gateway
+    url: https://llm-gateway.dev.nudgebee.pollux.in/health
     maxResponseTime: 10000
 
 status-website:
   # Repo is private: Upptime writes a bare "404" page unless publish is true
   publish: true
-  # No custom domain yet; page is served at https://nudgebee.github.io/status
-  # To use status.nudgebee.com: add `cname: status.nudgebee.com`, remove baseUrl, and point a CNAME at nudgebee.github.io
+  # Custom domain: once the Cloudflare CNAME status.dev.nudgebee.com -> nudgebee.github.io
+  # exists, uncomment `cname` and delete `baseUrl`. Doing it before DNS resolves makes
+  # GitHub Pages redirect nudgebee.github.io/status to a dead host.
+  # cname: status.dev.nudgebee.com
   baseUrl: /status
-  logoUrl: https://app.nudgebee.com/logo192.png
+  logoUrl: https://dev.nudgebee.pollux.in/logo192.png
   name: Nudgebee Status
   introTitle: "**Nudgebee** service status"
-  introMessage: Live uptime and response times for the Nudgebee app, docs, and agent gateways. Incidents are tracked as issues in the [status repository](https://github.com/nudgebee/status/issues?q=label%3Astatus).
+  introMessage: "Live uptime and response times for the Nudgebee dev environment (app, docs, and agent gateways). Incidents are tracked as issues in the [status repository](https://github.com/nudgebee/status/issues?q=label%3Astatus)."
   navbar:
     - title: Status
       href: /
     - title: Docs
-      href: https://docs.nudgebee.com
+      href: https://docs.dev.nudgebee.pollux.in
     - title: App
-      href: https://app.nudgebee.com
+      href: https://dev.nudgebee.pollux.in
 
 assignees:
   - mayankpande88
