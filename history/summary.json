@@ -148,9 +148,9 @@
     "url": "https://collector.dev.nudgebee.pollux.in/health",
     "icon": "https://icons.duckduckgo.com/ip3/collector.dev.nudgebee.pollux.in.ico",
     "slug": "collector-gateway",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -159,7 +159,9 @@
     "timeWeek": 184,
     "timeMonth": 184,
     "timeYear": 184,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-09-18": 0
+    }
   },
   {
     "name": "LLM Gateway",
